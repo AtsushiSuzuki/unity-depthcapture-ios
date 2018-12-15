@@ -9,7 +9,7 @@ class DepthCaptureBase: NSObject, AVCaptureDataOutputSynchronizerDelegate {
         case noFormatFound
     }
 
-    let queue = DispatchQueue(label: "com.gitlab.suzuki_ds.unity-depthcapture.DepthCapture.queue")
+    let queue = DispatchQueue(label: "com.github.AtsushiSuzuki.unity-depthcapture-ios.DepthCapture.queue")
     let session = AVCaptureSession()
     let videoOutput = AVCaptureVideoDataOutput()
     let depthOutput = AVCaptureDepthDataOutput()

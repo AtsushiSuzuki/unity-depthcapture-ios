@@ -1,6 +1,6 @@
-unity-depthcapture
-==================
-unity-depthcapture is Unity plugin to obtain depth map from iPhone camera.
+unity-depthcapture-ios
+======================
+unity-depthcapture-ios is Unity plugin to obtain depth map from iPhone camera.
 
 
 ## Development environment
@@ -16,7 +16,7 @@ unity-depthcapture is Unity plugin to obtain depth map from iPhone camera.
 ## Usage
 1. Import [unity-swift](https://github.com/miyabi/unity-swift) on your Unity project
    <br>or configure Swift-ObjC bridging by yourself
-2. Import [depthcapture.unitypackage](https://gitlab.com/suzuki_ds/unity-depthcapture/tags) on your Unity project
+2. Import [depthcapture.unitypackage](https://github.com/AtsushiSuzuki/unity-depthcapture-ios/releases) on your Unity project
 3. Conifgure your Xcode project
   - Set Deployment Target to `11.1` or laters
   - Set `SWIFT_VERSION` to `4.2` or later
@@ -155,3 +155,7 @@ $ make
 3. Generate Xcode project by "Build and Run"
 4. In Xcode, open project settings for "Unity-iPhone" and select your development team
 5. In Xcode, "Product" > "Run"
+
+
+## LICENSE
+ISC
