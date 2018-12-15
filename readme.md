@@ -126,13 +126,13 @@ The callback is invoked on non-main thread.
 `DepthCaptureEventHandler(IntPtr pVideoData, int videoWidth, int videoHeight, IntPtr pDepthData, int depthWidth, int depthHeight)` is used by event `DepthCaptured` or method `AcquireNextFrame(DepthCaptureEventHandler action)`.
 
 - Parameter `IntPtr pVideoData`:
-  <br>Pointer to video image buffer. pixel format is BGRA. this pointer is valid only for callback.
+  <br>Pointer to video image buffer. pixel format is 32bit BGRA. this pointer is valid only in callback.
 - Parameter `int videoWidth`:
   <br>image width for `pVideoData`.
 - Parameter `int videoHeight`:
   <br>image height for `pVideoData`.
 - Parameter `int pDepthData`:
-  <br>Pointer to depth map buffer. pixel format is 32bit float. this pointer is valid only for callback.
+  <br>Pointer to depth map buffer. pixel format is 32bit float. this pointer is valid only in callback.
   <br>Each pixel value represents distance in meter, see https://developer.apple.com/documentation/avfoundation/avdepthdata.
 - Parameter `int depthWidth`:
   <br>depth width for `pDepthData`.
