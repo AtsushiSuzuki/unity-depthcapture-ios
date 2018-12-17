@@ -26,6 +26,9 @@ unity-depthcapture-ios is Unity plugin to obtain depth map from iPhone camera.
 
 
 ## Example
+
+![sample image](docs/img/sample.jpeg)
+
 ```csharp
 // set up capture
 var capture = new DepthCapture();
