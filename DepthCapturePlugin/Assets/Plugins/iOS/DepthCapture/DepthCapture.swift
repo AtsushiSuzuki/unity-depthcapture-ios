@@ -15,7 +15,7 @@ class DepthCaptureBase: NSObject, AVCaptureDataOutputSynchronizerDelegate {
     let depthOutput = AVCaptureDepthDataOutput()
     var outputSynchronizer: AVCaptureDataOutputSynchronizer?
 
-    func configure(deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInDualCamera, .builtInTrueDepthCamera],
+    func configure(deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInTrueDepthCamera, .builtInDualCamera],
                    position: AVCaptureDevice.Position = .unspecified,
                    preset: AVCaptureSession.Preset = .vga640x480) throws {
         try queue.sync {

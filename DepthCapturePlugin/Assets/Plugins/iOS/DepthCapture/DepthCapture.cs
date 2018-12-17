@@ -84,7 +84,7 @@ public class DepthCapture : IDisposable
 
     public void Configure(DeviceType[] deviceTypes = null, Position position = Position.Unspecified, Preset preset = Preset.AVCaptureSessionPreset640x480)
     {
-        deviceTypes = deviceTypes ?? new[] { DeviceType.AVCaptureDeviceTypeBuiltInDualCamera, DeviceType.AVCaptureDeviceTypeBuiltInTrueDepthCamera, };
+        deviceTypes = deviceTypes ?? new[] { DeviceType.AVCaptureDeviceTypeBuiltInTrueDepthCamera, DeviceType.AVCaptureDeviceTypeBuiltInDualCamera, };
         var error = DepthCapture_configure(
             capture_,
             deviceTypes.Select(t => t.ToString()).ToArray(),
