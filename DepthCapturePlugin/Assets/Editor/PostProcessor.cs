@@ -10,13 +10,6 @@ public static class Postprocessor
     {
         if (buildTarget == BuildTarget.iOS)
         {
-            var projectPath = Path.Combine(path, "Unity-iPhone.xcodeproj/project.pbxproj");
-            var project = new PBXProject();
-            project.ReadFromFile(projectPath);
-            var target = project.TargetGuidByName("Unity-iPhone");
-            project.SetBuildProperty(target, "SWIFT_VERSION", "4.2");
-            project.WriteToFile(projectPath);
-
             var infoPath = Path.Combine(path, "Info.plist");
             var info = new PlistDocument();
             info.ReadFromFile(infoPath);
