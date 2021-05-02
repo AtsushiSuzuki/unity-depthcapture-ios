@@ -4,8 +4,8 @@ unity-depthcapture-ios is Unity plugin to obtain depth map from iPhone camera.
 
 
 ## Development environment
-- Unity 2018.2.18f1
-- Xcode 10.1 or later
+- Unity 2020.3.6f1
+- Xcode 12.5 or later
 
 
 ## Target environment
@@ -14,15 +14,13 @@ unity-depthcapture-ios is Unity plugin to obtain depth map from iPhone camera.
 
 
 ## Usage
-1. Import [unity-swift](https://github.com/miyabi/unity-swift) on your Unity project
-   <br>or configure Swift-ObjC bridging by yourself
-2. Import [depthcapture.unitypackage](https://github.com/AtsushiSuzuki/unity-depthcapture-ios/releases) on your Unity project
-3. Conifgure your Xcode project
+1. Import [depthcapture.unitypackage](https://github.com/AtsushiSuzuki/unity-depthcapture-ios/releases) on your Unity project
+2. Conifgure your Xcode project
   - Set Deployment Target to `11.1` or laters
-  - Set `SWIFT_VERSION` to `4.2` or later
+  - Set `SWIFT_VERSION` to `5` or later
   - Add `NSCameraUsageDescription` on `Info.plist`
-4. Implement camera permission request, see https://docs.unity3d.com/ScriptReference/Application.RequestUserAuthorization.html
-5. Use `DepthCapture` class in your script (see [example](DepthCapturePlugin/Assets/CaptureButton.cs))
+3. Implement camera permission request, see https://docs.unity3d.com/ScriptReference/Application.RequestUserAuthorization.html
+4. Use `DepthCapture` class in your script (see [example](DepthCapturePlugin/Assets/CaptureButton.cs))
 
 
 ## Example
@@ -145,6 +143,7 @@ The callback is invoked on non-main thread.
 
 ## Build unitypackage
 ```sh
+$ export UNITY=/Applications/Unity/Hub/Editor/2020.3.6f1/Unity.app/Contents/MacOS/Unity
 $ make
 
 # generates `depthcapture.unitypackage`
