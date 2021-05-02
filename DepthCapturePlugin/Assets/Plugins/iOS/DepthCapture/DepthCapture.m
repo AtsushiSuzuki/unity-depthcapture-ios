@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import <unityswift-Swift.h>
+#import <UnityFramework/UnityFramework-Swift.h>
 
 typedef void (*DepthCaptureCallback)(const void *pVideoData,
                                      intptr_t videoWidth,

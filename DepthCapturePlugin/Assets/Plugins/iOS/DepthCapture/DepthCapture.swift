@@ -1,7 +1,7 @@
 import Foundation
 import AVFoundation
 
-class DepthCaptureBase: NSObject, AVCaptureDataOutputSynchronizerDelegate {
+public class DepthCaptureBase: NSObject, AVCaptureDataOutputSynchronizerDelegate {
     enum Error: Int, Swift.Error {
         case noCameraDeviceFound = 1
         case noCaptureConnection
@@ -77,7 +77,7 @@ class DepthCaptureBase: NSObject, AVCaptureDataOutputSynchronizerDelegate {
     func depthCapture(videoData: CMSampleBuffer, depthData: AVDepthData, timestamp: CMTime) {
     }
 
-    func dataOutputSynchronizer(_ synchronizer: AVCaptureDataOutputSynchronizer, didOutput synchronizedDataCollection: AVCaptureSynchronizedDataCollection) {
+    public func dataOutputSynchronizer(_ synchronizer: AVCaptureDataOutputSynchronizer, didOutput synchronizedDataCollection: AVCaptureSynchronizedDataCollection) {
         guard let syncedVideoData = synchronizedDataCollection.synchronizedData(for: videoOutput) as? AVCaptureSynchronizedSampleBufferData,
               !syncedVideoData.sampleBufferWasDropped,
               let syncedDepthData = synchronizedDataCollection.synchronizedData(for: depthOutput) as? AVCaptureSynchronizedDepthData,
@@ -88,18 +88,18 @@ class DepthCaptureBase: NSObject, AVCaptureDataOutputSynchronizerDelegate {
     }
 }
 
-typealias DepthCaptureCallback = @convention(c) (UnsafeRawPointer, Int, Int, UnsafeRawPointer, Int, Int, UnsafeRawPointer) -> Void
+public typealias DepthCaptureCallback = @convention(c) (UnsafeRawPointer, Int, Int, UnsafeRawPointer, Int, Int, UnsafeRawPointer) -> Void
 
-class DepthCapture: DepthCaptureBase {
+@objc public class DepthCapture: DepthCaptureBase {
     let callback: DepthCaptureCallback
     let state: UnsafeRawPointer
 
-    @objc init(callback: @escaping DepthCaptureCallback, state: UnsafeRawPointer) {
+    @objc public init(callback: @escaping DepthCaptureCallback, state: UnsafeRawPointer) {
         self.callback = callback
         self.state = state
     }
 
-    @objc func configure(deviceTypes: [String],
+    @objc public func configure(deviceTypes: [String],
                          position: Int,
                          preset: String) -> Int {
         do {
@@ -112,11 +112,11 @@ class DepthCapture: DepthCaptureBase {
         return 0
     }
 
-    @objc override func start() {
+    @objc public override func start() {
         super.start()
     }
 
-    @objc override func stop() {
+    @objc public override func stop() {
         super.stop()
     }
 
